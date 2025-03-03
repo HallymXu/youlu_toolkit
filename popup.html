@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>有录工具箱3.0版</title> <!-- This title is for the document, not visible in the popup UI -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="toolbar">
+    <!-- <button class="tab-button" data-tab="main">Main Page</button> -->
+    <button class="tab-button" data-tab="new">+</button>
+    <div id="tab-container"></div>
+  </div>
+  <div id="main-container">
+    <div id="text-processing-plugin-container">
+      <div class="header-container">
+        <h1>有录工具箱3.0版</h1> <!-- Visible Title -->
+      </div>
+      <div class="grid-container">
+        <div class="control-item">
+          <label for="groupSelect">选择组别</label>
+          <select id="groupSelect">
+            <!-- Options from 1 to 20 -->
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+        <div class="control-item">
+          <label for="timerSelect">计时器</label>
+          <select id="timerSelect">
+            <option value="30">30min</option>
+            <option value="60">60min</option>
+            <option value="90">90min</option>
+            <option value="120">120min</option>
+            <option value="150">150min</option>
+            <option value="180">180min</option>
+            <option value="210">210min</option>
+            <option value="240">240min</option>
+          </select>
+        </div>
+        <div class="control-item">
+          <span id="timerDisplay">00:00:00</span>
+        </div>
+        <div class="control-item">
+          <div class="timer-buttons">
+            <button id="startTimerButton" class="processButton">Start</button>
+            <button id="pauseTimerButton" class="processButton">Pause</button>
+            <button id="resetTimerButton" class="processButton">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <textarea id="inputText" placeholder="填写主体信息..."></textarea>
+        <textarea id="emailInputText" placeholder="填写客户信息..."></textarea>
+      </div>
+ 
+      <div class="output-container">
+        <button id="processButton">Process Text</button>
+        <textarea id="outputText" placeholder="Processed text will appear here..." ></textarea>
+        <button class="copyButton" data-target="outputText">Copy Processed Text</button>
+        <textarea id="casetype" placeholder="case type will appear here..." readonly></textarea>
+        <textarea id="calculatedEmail" placeholder="Calculated email will appear here..." readonly></textarea>
+        <textarea id="emailOutput" placeholder="Extracted email addresses..." readonly></textarea>
+        <button class="copyButton" data-target="emailOutput">Copy Emails</button>
+        <button id="clearButton">Clear All</button> <!-- Clear Button -->
+      </div>
+ 
+      <footer>copyright@xuhanlin</footer> <!-- Copyright Notice -->
+    </div>
+
+    <div id="right-container">
+      <div class="top-section">
+        <textarea id="backgroundTextBox" placeholder="学生背景" readonly></textarea> <!-- Text Box 1 for Student Background -->
+        <textarea id="intentionTextBox" placeholder="申请意向" readonly></textarea> <!-- Text Box 2 for Application Intention -->
+      </div>
+      <div class="button-container">
+        <button id="startWorkButton" class="processButton">上班话术</button>
+        <button id="endWorkButton" class="processButton">下班话术</button>
+        <button id="passScriptButton" class="processButton">通过话术</button>
+        <button id="loginMailButton" class="processButton">启动邮箱</button>
+      </div>
+      <div class="bottom-section">
+        <textarea id="editBox" placeholder="可在此处撰写检查报告"></textarea> <!-- Renamed and made editable -->
+        <button class="copyButton" data-target="editBox">Copy Text</button> <!-- New Copy Text button -->  
+      </div>
+    </div>
+  </div>
+  <script src="popup.js" defer></script>
+  <script src="background.js" defer></script>
+</body>
+</html>

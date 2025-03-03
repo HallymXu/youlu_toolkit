@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Persistent Window Extension",
+    "version": "1.0",
+    "description": "An extension with a persistent popup window",
+    "permissions": ["tabs", "windows", "system.display", "contextMenus", "notifications"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_icon": "icon.png"
+    }
+}
