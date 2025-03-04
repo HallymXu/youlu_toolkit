@@ -37,6 +37,11 @@ body {
   color: #ffffff;
 }
 
+.switch-button.active {
+  background-color: #ff8c00; /* 橙色 */
+  color: #ffffff; /* 文字颜色变白 */
+}
+
 .tab-content {
   display: none;
   padding: 10px;

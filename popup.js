@@ -159,14 +159,25 @@ document.addEventListener('DOMContentLoaded', function() {
       if (tabs.length > 0) {
         currentTab = tabs[0];
         loadCurrentContent(currentTab.id); // 加载第一个选项卡内容
+        // currentTab.buttonElement.classList.add('active'); // 让当前点击的按钮变成 active
       }
     });
 
-    tabButton.addEventListener('click', function() {
-      if (currentTab) saveCurrentContent(currentTab.id); // 保存当前选项卡内容
+    // tabButton.addEventListener('click', function() {
+    //   if (currentTab) saveCurrentContent(currentTab.id); // 保存当前选项卡内容
+    //   loadCurrentContent(tabObject.id); // 加载新选项卡内容
+    //   currentTab = tabObject; // 更新当前选项卡
+    // });
+    tabButton.addEventListener('click', function () {
+      if (currentTab) {
+          saveCurrentContent(currentTab.id); // 保存当前选项卡内容
+          currentTab.buttonElement.classList.remove('active'); // 移除原选项卡的 active 状态
+      }
+  
       loadCurrentContent(tabObject.id); // 加载新选项卡内容
+      tabObject.buttonElement.classList.add('active'); // 让当前点击的按钮变成 active
       currentTab = tabObject; // 更新当前选项卡
-    });
+  });
 
     newTab.appendChild(tabButton); // 将选项卡按钮添加到选项卡容器
     newTab.appendChild(closeButton); // 将关闭按钮添加到选项卡容器
@@ -213,6 +224,7 @@ function loadSavedTabs() {
   if (tabs.length > 0) {
     currentTab = tabs[0];  // 将 currentTab 设置为第一个选项卡
     loadCurrentContent(currentTab.id); // 加载第一个选项卡的内容
+    currentTab.buttonElement.classList.add('active')
   }
 }
 
